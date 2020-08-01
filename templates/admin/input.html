@@ -1,0 +1,33 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+
+<div class="card shadow mb-4 col-10">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Question Answer Input</h6>
+  </div>
+  <div class="card-body">
+
+    <form class="user" method="POST">
+      {{ qaTextForm.csrf_token }}
+
+        <h5 class="modal-title" id="phraseModalLongTitle">Enter Question and Text Body:</h5>
+
+          <div class="form-group">
+            <label for="question" class="col-form-label">Question:</label>
+            {{ qaTextForm.question(class_ = 'form-control form-control-user', placeholder='Enter question here...', id='question') }}
+          </div>
+          <div class="form-group">
+            <label for="text" class="col-form-label">Text Body:</label>
+            {{ qaTextForm.text(class_ = 'form-control form-control-user', placeholder='Enter text body here...', id='text') }}
+          </div>
+
+        <div class="modal-footer">
+          {{ qaTextForm.submit(class_ = 'btn btn-primary') }}
+        </div>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

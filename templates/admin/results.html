@@ -1,0 +1,28 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+
+<div class="card shadow mb-4 col-10">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Question Answer Input</h6>
+  </div>
+  <div class="card-body">
+
+    <h4 class="mt-4" id="questionTitle">Question:</h4>
+    <div id="questionDisplay"><p>{{ question }}</p></div>
+
+    <hr class="sidebar-divider" style="margin-top: 1em; margin-bottom: 1em;">
+    <h4 class="mt-4" id="textTitle">Text Body Entity Display:</h4>
+    <div id="textDisplay">{{ text|safe }}</div>
+
+    <hr class="sidebar-divider" style="margin-top: 1em; margin-bottom: 1em;"> 
+    <h4 class="mt-4" id="answerTitle">Best Answers:</h4>
+    <div id="answerDisplay"><p>{{ answer|safe }}</p></div>
+
+    <hr class="sidebar-divider" style="margin-top: 1em; margin-bottom: 1em;"> 
+    <h4 class="mt-4" id="answerTitle">Possible Answers (with scores):</h4>
+    <div id="answerDisplay">{{ possibilities|safe }}</div>
+
+  </div>
+</div>
+
+{% endblock %}
